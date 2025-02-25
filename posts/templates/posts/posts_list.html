@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>All Posts</h1>
+<ul>
+    {% for post in posts %}
+    <li>
+        <h2>{{ post.title }}</h2>
+        <p>{{ post.description }}</p>
+        <p>Author: {{ post.author.username }}</p>
+        <p>Thread: {{ post.thread.name }}</p>
+    </li>
+    {% endfor %}
+</ul>
+<a href="{% url 'post_create' %}" class="btn btn-primary">Create New Post</a>
+{% endblock %}
