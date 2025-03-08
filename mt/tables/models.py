@@ -1,13 +1,13 @@
 from django.db import models
 
 class Table(models.Model):
-    number = models.IntegerField(verbose_name='Номер стола')
-    seats = models.IntegerField(verbose_name='Количество мест')
-    is_available = models.BooleanField(verbose_name='Доступен', default=True)
+    number = models.IntegerField(unique=True)
+    seats = models.IntegerField()
+    is_available = models.BooleanField(default=True)
 
     class Meta:
-        verbose_name = 'Стол'
-        verbose_name_plural = 'Столы'
+        verbose_name = 'Table'
+        verbose_name_plural = 'Tables'
 
     def __str__(self):
-        return f"Стол №{self.number}"
+        return f"Table {self.number}"
