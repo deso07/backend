@@ -1,4 +1,5 @@
 from django.test import TestCase
+<<<<<<< HEAD
 from .models import Table
 
 class TableModelTest(TestCase):
@@ -19,3 +20,7 @@ class TableModelTest(TestCase):
     def test_unique_table_number(self):
         with self.assertRaises(Exception):
             Table.objects.create(number=1, seats=6, is_available=True)
+=======
+
+# Create your tests here.
+>>>>>>> bddae2e57bd51d9b3a5c0d1ac075d0ae8df1698d

@@ -1,4 +1,5 @@
 from django.test import TestCase
+<<<<<<< HEAD
 from .models import Reservation
 from customers.models import Customer
 from tables.models import Table
@@ -23,3 +24,7 @@ class ReservationModelTest(TestCase):
 
     def test_reservation_str(self):
         self.assertEqual(str(self.reservation), f'Reservation for {self.customer.name} on {self.reservation.date}')
+=======
+
+# Create your tests here.
+>>>>>>> bddae2e57bd51d9b3a5c0d1ac075d0ae8df1698d
