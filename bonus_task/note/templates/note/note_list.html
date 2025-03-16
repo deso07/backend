@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}Список заметок{% endblock %}
+
+{% block content %}
+    <h1 class="mb-4">Список заметок</h1>
+    <a href="{% url 'note_create' %}" class="btn btn-primary mb-3">Создать новую заметку</a>
+    <ul class="list-group">
+        {% for note in notes %}
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <a href="{% url 'note_detail' note.pk %}" class="text-decoration-none">{{ note.title }}</a>
+                <div>
+                    <a href="{% url 'note_update' note.pk %}" class="btn btn-sm btn-warning me-2">Редактировать</a>
+                    <a href="{% url 'note_delete' note.pk %}" class="btn btn-sm btn-danger">Удалить</a>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

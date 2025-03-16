@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}{% if form.instance.pk %}Редактировать заметку{% else %}Создать новую заметку{% endif %}{% endblock %}
+
+{% block content %}
+    <h1 class="mb-4">{% if form.instance.pk %}Редактировать заметку{% else %}Создать новую заметку{% endif %}</h1>
+    <form method="post">
+        {% csrf_token %}
+        <div class="mb-3">
+            {{ form.as_p }}
+        </div>
+        <button type="submit" class="btn btn-primary">Сохранить</button>
+        <a href="{% url 'note_list' %}" class="btn btn-secondary">Назад к списку</a>
+    </form>
+{% endblock %}
